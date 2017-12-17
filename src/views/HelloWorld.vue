@@ -27,6 +27,19 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     };
+  },
+  created () {
+    this.getInfo();
+  },
+  methods: {
+    getInfo () {
+      const obj = {
+        'aa': 1
+      };
+      Promise.all([this.$store.dispatch('testUrl', obj)]).then((res) => {
+        
+      })
+    }
   }
 };
 </script>
